@@ -23,7 +23,7 @@
 
         }
 
-        public string getCategory()
+        public string GetCategory()
         {
             string category = "";
             double _bmi = CalcBmi();
