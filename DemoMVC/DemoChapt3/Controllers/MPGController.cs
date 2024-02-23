@@ -2,7 +2,7 @@
 
 namespace DemoChapt3.Controllers
 {
-    public class MPGController1 : Controller
+    public class MPGController : Controller
     {
         [HttpGet]
         public IActionResult Index()
@@ -13,10 +13,10 @@ namespace DemoChapt3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(MPGController1 driverStats)
+        public IActionResult Index(MPGController driverStats)
         {
             return View(driverStats);
         }
     }
 }
-}
+
