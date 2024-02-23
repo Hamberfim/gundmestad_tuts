@@ -4,17 +4,23 @@
 }
 
 <h1>Miles Per Gallon Calculator</h1>
-<div>
-    <form asp-action="Index" method="post">
-        <div>
-            <label asp-for="MilesDriven" class="form-label">Miles Driven: </label>
-            <input asp-for="MilesDriven" class="form-control" value="@ViewBag.MilesDriven.ToString()" />
-        </div>
-        <div>
-            <label asp-for="GallonsUsed" class="form-label">Gallons Used: </label>
-            <input asp-for="GallonsUsed" class="form-control" value="@ViewBag.GallonsUsed.ToString()" />
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <a asp-action="index" class="btn btn-outline-primary">Clear</a>
-    </form>
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <form asp-action="Index" method="post">
+            <div>
+                <label asp-for="MilesDriven" class="form-label">Miles Driven: </label>
+                <input asp-for="MilesDriven" class="form-control" value="@ViewBag.MilesDriven.ToString()" />
+            </div>
+            <div>
+                <label asp-for="GallonsUsed" class="form-label">Gallons Used: </label>
+                <input asp-for="GallonsUsed" class="form-control" value="@ViewBag.GallonsUsed.ToString()" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-action="index" class="btn btn-outline-primary">Clear</a>
+        </form>
+    </div>
+    <div class="col">
+        <output class="text-success">@ViewBag.MPG.ToString()</output>
+    </div>
 </div>

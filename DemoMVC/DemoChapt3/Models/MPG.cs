@@ -2,30 +2,13 @@
 {
     public class MPG
     {
-        private double _milesDriven;
-        private double _gallonsUsed;
+        public double MilesDriven { get; set; }
+        public double GallonsUsed { get; set; }
 
-        public double MilesDriven
+        public double CalcMpg()
         {
-            get => _milesDriven;
-            set
-            {
-                _milesDriven = value;
-            }
-        }
-
-        public double GallonsUsed
-        {
-            get => _gallonsUsed;
-            set
-            {
-                _gallonsUsed = value;
-            }
-        }
-
-        public double CalcMPG()
-        {
-            return MilesDriven / GallonsUsed;
+            double mpg = MilesDriven / GallonsUsed;
+            return mpg;
         }
     }
 

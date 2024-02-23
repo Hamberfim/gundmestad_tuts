@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DemoChapt3.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DemoChapt3.Controllers
 {
@@ -9,12 +10,14 @@ namespace DemoChapt3.Controllers
         {
             ViewBag.MilesDriven = 0;
             ViewBag.GallonsUsed = 0;
+            ViewBag.MPG = 0;
             return View();
         }
 
         [HttpPost]
         public IActionResult Index(MPGController driverStats)
         {
+            ViewBag.MPG = driverStats.
             return View(driverStats);
         }
     }
