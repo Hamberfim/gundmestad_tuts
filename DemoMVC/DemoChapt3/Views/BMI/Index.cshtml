@@ -15,11 +15,13 @@
                 <label asp-for="Weight" class="form-label">Weight</label>
                 <input type="text" class="form-control" asp-for="Weight" value="@ViewBag.Weight" />
             </div>
-            <div>
+            <div class="mt-2">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a asp-action="Index" class="btn btn-outline-primary">Clear</a>
             </div>
         </form>
     </div>
-    <div class="col"></div>
+    <div class="col">
+        <div class="display-5 text-success">@ViewBag.BMI.ToString()</div>
+    </div>
 </div>
