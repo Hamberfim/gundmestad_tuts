@@ -9,6 +9,7 @@ namespace DemoChapt2.Controllers
             // .name is a dynamic property
             ViewBag.Name = "Anthony";
             ViewBag.FV = 9999.99;
+            ViewBag.Age = 57;
             return View();
         }
     }
