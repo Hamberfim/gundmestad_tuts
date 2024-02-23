@@ -4,5 +4,19 @@
 }
 
 <h1>Miles Per Gallon Calculator</h1>
-<form asp-action="Index" method="post">
-</form>
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <form asp-action="Index" method="post">
+            <div>
+                <label asp-for="MilesDriven" class="form-label">Miles Driven: </label>
+                <input asp-for="MilesDriven" class="form-control" value="@ViewBag.MilesDriven.ToString()" />
+            </div>
+            <div>
+                <label asp-for="GallonsUsed" class="form-label">Gallons Used: </label>
+                <input asp-for="GallonsUsed" class="form-control" value="@ViewBag.GallonsUsed.ToSting()" />
+            </div>
+        </form>
+    </div>
+    <div class="col"></div>
+</div>
