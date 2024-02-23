@@ -22,7 +22,12 @@
                 _gallonsUsed = value;
             }
         }
+
+        public double CalcMPG()
+        {
+            return MilesDriven / GallonsUsed;
+        }
     }
 
-    
+
 }
