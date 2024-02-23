@@ -14,5 +14,7 @@
             <label asp-for="GallonsUsed" class="form-label">Gallons Used: </label>
             <input asp-for="GallonsUsed" class="form-control" value="@ViewBag.GallonsUsed.ToString()" />
         </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a asp-action="index" class="btn btn-outline-primary">Clear</a>
     </form>
 </div>
