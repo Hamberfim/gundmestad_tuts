@@ -1,4 +1,5 @@
-﻿using DemoChapt3.Models;
+﻿using DemoChapt3;
+using DemoChapt3.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoChapt3.Controllers
@@ -15,9 +16,11 @@ namespace DemoChapt3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(MPGController driverStats)
+        public IActionResult Index(MPG driverStats)
         {
-            ViewBag.MPG = driverStats.
+            ViewBag.MPG = driverStats.CalcMpg();
+            ViewBag.MilesDriven = driverStats.MilesDriven;
+            ViewBag.GallonsUsed = driverStats.GallonsUsed;
             return View(driverStats);
         }
     }
