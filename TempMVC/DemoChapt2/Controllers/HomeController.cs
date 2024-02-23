@@ -1,16 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using DemoChapt2.Models;
 
 namespace DemoChapt2.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            // .name is a dynamic property
-            ViewBag.Name = "Anthony";
-            ViewBag.FV = 9999.99;
-            ViewBag.Age = 57;
+            // .FV is a dynamic property
+            ViewBag.FV = 0;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(FutureValueModel model)
+        {
+            ViewBag.FV = model.CalculateFutureValue();
+            return View(model);
         }
     }
 }
