@@ -19,7 +19,7 @@
 
         public double CalcBmi()
         {
-            return _weight / (_height * _height);
+            return (_height * _height) / _weight;
 
         }
 
