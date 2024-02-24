@@ -18,10 +18,13 @@ namespace NFLTeams.Models
 
             // conferences
             modelBuilder.Entity<ConferenceModel>().HasData();
+
             // divisions
             modelBuilder.Entity<DivisionModel>().HasData();
+
             // teams
             modelBuilder.Entity<TeamModel>().HasData();
+
         }
     }
 }
