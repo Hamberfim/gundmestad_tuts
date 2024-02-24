@@ -9,9 +9,9 @@ namespace NFLTeams.Models
 
         // used Model suffix to be less ambiguous when building out the seed data here in the TeamContext
         // three tables based on the three models ConferenceModel, DivisionModel, TeamModel each needs a DbSet
-        public DbSet<TeamModel> Teams { get; set; } = null!;
-        public DbSet<ConferenceModel> Conferences { get; set; } = null!;
-        public DbSet<DivisionModel> Divisions { get; set; } = null!;
+        public DbSet<Team> Teams { get; set; } = null!;
+        public DbSet<Conference> Conferences { get; set; } = null!;
+        public DbSet<Division> Divisions { get; set; } = null!;
 
 
         // seed the db
@@ -20,22 +20,22 @@ namespace NFLTeams.Models
             base.OnModelCreating(modelBuilder);
 
             // conferences
-            modelBuilder.Entity<ConferenceModel>().HasData(
-                    new ConferenceModel { ConferenceID = "afc", Name = "AFC" },
-                    new ConferenceModel { ConferenceID = "nfc", Name = "NFC" }
+            modelBuilder.Entity<Conference>().HasData(
+                    new Conference { ConferenceID = "afc", Name = "AFC" },
+                    new Conference { ConferenceID = "nfc", Name = "NFC" }
                 );
 
             // divisions
-            modelBuilder.Entity<DivisionModel>().HasData(
-                    new DivisionModel { DivisionID = "north", Name = "North" },
-                    new DivisionModel { DivisionID = "south", Name = "South" },
-                    new DivisionModel { DivisionID = "east", Name = "East" },
-                    new DivisionModel { DivisionID = "west", Name = "West" }
+            modelBuilder.Entity<Division>().HasData(
+                    new Division { DivisionID = "north", Name = "North" },
+                    new Division { DivisionID = "south", Name = "South" },
+                    new Division { DivisionID = "east", Name = "East" },
+                    new Division { DivisionID = "west", Name = "West" }
                 );
 
             // teams  - new {} is an anonymous object since the Team object doesn't have a foreign key for Conference id or Division id 
             // those id's are provided in this new{} anonymous object as strings for conference (nfc, afc) and division (north, south, east, west))
-            modelBuilder.Entity<TeamModel>().HasData(
+            modelBuilder.Entity<Team>().HasData(
                 new { TeamID = "ari", Name = "Arizona Cardinals", ConferenceID = "nfc", DivisionID = "west", LogoImage = "ARI.png" },
                 new { TeamID = "atl", Name = "Atlanta Falcons", ConferenceID = "nfc", DivisionID = "south", LogoImage = "ATL.png" },
                 new { TeamID = "bal", Name = "Baltimore Ravens", ConferenceID = "afc", DivisionID = "north", LogoImage = "BAL.png" },
