@@ -37,7 +37,7 @@ namespace NFLTeams.Controllers
                 query = query.Where(t => t.Division.DivisionID.ToLower() == activeDiv.ToLower());
             }
 
-            var teams = query.ToList();
+            var teams = query.ToList();  // execute the query
             return View(teams);
         }
 
