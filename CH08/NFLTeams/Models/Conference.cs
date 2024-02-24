@@ -5,7 +5,7 @@ namespace NFLTeams.Models
 {
     // used Model suffix to be less ambiguous when building out the seed data in the TeamContext
     [Keyless]
-    public class ConferenceModel
+    public class Conference
     {
         
         public string ConferenceID { get; set; } = string.Empty;
