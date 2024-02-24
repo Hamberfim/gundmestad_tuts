@@ -5,7 +5,6 @@
     {
         public string TeamID { get; set; } = string.Empty;
 
-        // Name suffix so that its less ambiguous when building out the seed data in the TeamContext
         public string Name { get; set; } = string.Empty;
         public ConferenceModel Conference { get; set; } = null!;
 

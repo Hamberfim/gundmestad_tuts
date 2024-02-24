@@ -9,9 +9,10 @@ namespace NFLTeams.Models
 
         // used Model suffix to be less ambiguous when building out the seed data here in the TeamContext
         // three tables based on the three models ConferenceModel, DivisionModel, TeamModel each needs a DbSet
+        public DbSet<TeamModel> Teams { get; set; } = null!;
         public DbSet<ConferenceModel> Conferences { get; set; } = null!;
         public DbSet<DivisionModel> Divisions { get; set; } = null!;
-        public DbSet<TeamModel> Teams { get; set; } = null!;
+        
 
         // seed the db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,7 +36,7 @@ namespace NFLTeams.Models
             // teams  - new {} is an anonymous object since the Team object doesn't have a foreign key for Conference id or Division id 
             // those id's are provided in this new{} anonymous object as strings for conference (nfc, afc) and division (north, south, east, west))
             modelBuilder.Entity<TeamModel>().HasData(
-                new { TeamId = "ari", Name = "Arizona Cardinals", ConferenceID = "nfc", DivisionID = "west", LogoImage = "ARI.png" },
+                new { TeamID = "ari", Name = "Arizona Cardinals", ConferenceID = "nfc", DivisionID = "west", LogoImage = "ARI.png" },
                 new { TeamID = "atl", Name = "Atlanta Falcons", ConferenceID = "nfc", DivisionID = "south", LogoImage = "ATL.png" },
                 new { TeamID = "bal", Name = "Baltimore Ravens", ConferenceID = "afc", DivisionID = "north", LogoImage = "BAL.png" },
                 new { TeamID = "buf", Name = "Buffalo Bills", ConferenceID = "afc", DivisionID = "east", LogoImage = "BUF.png" },
