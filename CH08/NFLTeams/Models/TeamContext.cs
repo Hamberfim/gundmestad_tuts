@@ -6,7 +6,8 @@ namespace NFLTeams.Models
     {
         public TeamContext(DbContextOptions<TeamContext> options) : base(options) { }
 
-        // three tables based on the three models Conference, Division, Team each needs a DbSet
+        // used Model suffix to be less ambiguous when building out the seed data here in the TeamContext
+        // three tables based on the three models ConferenceModel, DivisionModel, TeamModel each needs a DbSet
         public DbSet<ConferenceModel> Conferences { get; set; } = null!;
         public DbSet<DivisionModel> Divisions { get; set; } = null!;
         public DbSet<TeamModel> Teams { get; set; } = null!;
@@ -17,7 +18,10 @@ namespace NFLTeams.Models
             base.OnModelCreating(modelBuilder);
 
             // conferences
-            modelBuilder.Entity<ConferenceModel>().HasData();
+            modelBuilder.Entity<ConferenceModel>().HasData(
+                    new ConferenceModel { ConferenceId = "afc", ConferenceName = "AFC"},
+                    new ConferenceModel { ConferenceId = "nfc", ConferenceName = "NFC"}
+                );
 
             // divisions
             modelBuilder.Entity<DivisionModel>().HasData();
