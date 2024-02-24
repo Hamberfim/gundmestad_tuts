@@ -1,10 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-
-namespace NFLTeams.Models
+﻿namespace NFLTeams.Models
 {
     // used Model suffix to be less ambiguous when building out the seed data in the TeamContext
-    [Keyless]
     public class Conference
     {
         
