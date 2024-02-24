@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using NFLTeams.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// add ef core dependency injection
+builder.Services.AddDbContext<TeamContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("TeamContext")));
 
 var app = builder.Build();
 
