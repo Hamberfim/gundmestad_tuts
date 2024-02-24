@@ -17,7 +17,7 @@
             asp-route-activeDiv="@ViewBag.ActiveDiv" 
             class="list-group-item @Active("all", ViewBag.ActiveConf)">All</a>
 
-            @foreach (Conference conf in ViewBag.Conference)
+            @foreach (Conference conf in ViewBag.Conferences)
             {
                 <a asp-action="Index"
                    asp-route-activeConf="@conf.ConferenceID"
@@ -32,7 +32,7 @@
                asp-route-activeDiv="all"
                class="list-group-item @Active("all", ViewBag.ActiveDiv)">All</a>
 
-            @foreach (Division div in ViewBag.Division)
+            @foreach (Division div in ViewBag.Divisions)
             {
                 <a asp-action="Index"
                    asp-route-activeConf="@ViewBag.ActiveConf"
