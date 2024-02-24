@@ -4,7 +4,8 @@ namespace NFLTeams.Models
 {
     public class TeamContext : DbContext
     {
-        public TeamContext(DbContextOptions<TeamContext> options) : base(options) { }
+        public TeamContext(DbContextOptions<TeamContext> options) 
+            : base(options) { }
 
         // used Model suffix to be less ambiguous when building out the seed data here in the TeamContext
         // three tables based on the three models ConferenceModel, DivisionModel, TeamModel each needs a DbSet
@@ -15,7 +16,7 @@ namespace NFLTeams.Models
         // seed the db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            //base.OnModelCreating(modelBuilder);
 
             // conferences
             modelBuilder.Entity<ConferenceModel>().HasData(
