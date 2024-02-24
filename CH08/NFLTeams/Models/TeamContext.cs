@@ -31,7 +31,8 @@ namespace NFLTeams.Models
                     new DivisionModel { DivisionId = "west", DivisionName = "West" }
                 );
 
-            // teams  - anonymous object since the Team object doesn't have a foreign key
+            // teams  - new {} is an anonymous object since the Team object doesn't have a foreign key for Conference id or Division id 
+            // those id's are provided in this new{} anonymous object as strings for conference (nfc, afc) and division (north, south, east, west))
             modelBuilder.Entity<TeamModel>().HasData(
                 new { TeamId = "ari", TeamName = "Arizona Cardinals", ConferenceId = "nfc", DivisionId = "west", LogoImage = "ARI.png" },
                 new { TeamID = "atl", TeamName = "Atlanta Falcons", ConferenceId = "nfc", DivisionId = "south", LogoImage = "ATL.png" },
