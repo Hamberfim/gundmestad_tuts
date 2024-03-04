@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @* session exists per browser in mutiple tabs, expires when browser is closed *@
+    @Context.Session.GetInt32("num")
+</div>
