@@ -22,11 +22,17 @@ namespace NFLTeams.Controllers
             //string teamJson = JsonSerializer.Serialize(team);
             //// set the session variable
             //HttpContext.Session.SetString("team", teamJson);
-            var teams = HttpContext.Session.GetObject<List<Team>>("teams") ?? new List<Team>();
+            //var teams = HttpContext.Session.GetObject<List<Team>>("teams") ?? new List<Team>();
+            //teams.Add(new Team { TeamID = "gb", Name = "Green Bay Packers" });
+            //teams.Add(new Team { TeamID = "sea", Name = "Seatle Seahawks" });
+            //// write the session variable as list of teams
+            //HttpContext.Session.SetObject("teams", teams);
+
+            MySession session = new MySession(HttpContext.Session);
+            var teams = session.GetTeams();
             teams.Add(new Team { TeamID = "gb", Name = "Green Bay Packers" });
             teams.Add(new Team { TeamID = "sea", Name = "Seatle Seahawks" });
-            // write the session variable as list of teams
-            HttpContext.Session.SetObject("teams", teams);
+            session.SetTeams(teams);
 
             // storing selected conf and div ID's in view bag
             //ViewBag.ActiveConf = activeConf;

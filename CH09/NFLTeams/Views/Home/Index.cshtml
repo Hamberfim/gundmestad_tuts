@@ -10,7 +10,10 @@
     // string teamJson = Context.Session.GetString("team");
     // Team favTeam = JsonSerializer.Deserialize<Team>(teamJson);
     // Team favTeam = Context.Session.GetObject<Team>("teams");
-    List<Team> favTeam = Context.Session.GetObject<List<Team>>("teams") ?? new List<Team>();
+    // List<Team> favTeam = Context.Session.GetObject<List<Team>>("teams") ?? new List<Team>();
+
+    var session = new MySession(Context.Session);
+    List<Team> favTeam = session.GetTeams();
 
 }
 <!-- <p class="text-danger">@*favTeam.Name @favTeam.TeamID*@</p> -->
