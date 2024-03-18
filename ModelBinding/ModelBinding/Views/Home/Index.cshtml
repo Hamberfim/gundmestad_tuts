@@ -1,0 +1,40 @@
+﻿@model Record
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="Index" method="post">
+    <div class="m-2">
+        <label asp-for="Id" class="form-label">Record Id</label>
+        <input asp-for="Id" class="form-control" />
+        <label asp-for="Name" class="form-label">Record Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!--  if you are Not using @@model Record to strongly type the view you replace asp-for with the name attribute with values that match the model properties -->
+<form asp-action="AddMusician" method="post">
+    <div class="m-2">
+        <label name="id" class="form-label">Musician Id</label>
+        <input name="id" class="form-control" />
+        <label name="name" class="form-label">Musician Name</label>
+        <input name="name" class="form-control" />
+        <label name="description" class="form-label">Musician Description</label>
+        <input name="description" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+<form asp-action="AddData" method="post">
+    <h3>Add Student Names</h3>
+    <div class="m-2">
+        <label name="label_studentNames1" class="form-label">Student Name 1</label>
+        <input name="studentNames" id="txtName1" class="form-control" />
+        <label name="label_studentNames1" class="form-label">Student Name 2</label>
+        <input name="studentNames" id="txtName2" class="form-control" />
+        <label name="label_studentNames3" class="form-label">Student Name 3</label>
+        <input name="studentNames" id="txtName3" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>
